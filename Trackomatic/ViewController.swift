@@ -56,6 +56,8 @@ class ViewController: NSViewController, NSWindowDelegate,
     
     @IBOutlet weak var commentsTab: NSView!
     @IBOutlet weak var chatTab: NSView!
+    
+    @IBOutlet weak var playPauseButton: NSButton!
         
     @IBOutlet weak var exportButton: NSButton!;
     
@@ -72,15 +74,20 @@ class ViewController: NSViewController, NSWindowDelegate,
     fileprivate var rows: [ Any ] = [];
     
     fileprivate var updateTimer: Timer?;
-    
-    @IBAction func playPressed(_ sender: Any)
+
+    @IBAction func toStartPushed(_ sender: Any)
     {
-        player.play( atTime: timelineView.position );
+        player.play(atTime: 0.0);
     }
     
-    @IBAction func stopPressed(_ sender: Any)
+    @IBAction func playPauseToggled(_ sender: Any)
     {
-        player.stop();
+        if (player.playing) {
+            player.stop();
+        }
+        else {
+            player.play( atTime: timelineView.position );
+        }
     }
     
     @IBAction func exportMix( _ sender: Any )
@@ -286,6 +293,7 @@ class ViewController: NSViewController, NSWindowDelegate,
     {
         return rows[ row ] as? URL != nil;
     }
+    
     
     func numberOfRows(in tableView: NSTableView) -> Int
     {

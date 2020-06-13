@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16096"/>
-        <plugIn identifier="com.apple.WebKit2IBPlugin" version="16096"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="16097"/>
+        <plugIn identifier="com.apple.WebKit2IBPlugin" version="16097"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -814,7 +814,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="JQ5-AN-dk6">
                                 <rect key="frame" x="148" y="180" width="604" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="This is used by Trackomatic for settings files." id="K9r-ns-cEV">
-                                    <font key="font" metaFont="message" size="11"/>
+                                    <font key="font" metaFont="controlContent" size="11"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -845,7 +845,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="aEK-r1-hrR">
                                 <rect key="frame" x="148" y="131" width="604" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="This is shown in the app with your comments" id="q91-qv-e6S">
-                                    <font key="font" metaFont="message" size="11"/>
+                                    <font key="font" metaFont="controlContent" size="11"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -869,7 +869,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="fxW-cM-IIO">
                                 <rect key="frame" x="148" y="40" width="604" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Supports {name} and {room} token substitution" id="nXR-x0-2dM">
-                                    <font key="font" metaFont="message" size="11"/>
+                                    <font key="font" metaFont="controlContent" size="11"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -895,7 +895,7 @@
                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m1w-LX-GNl">
                                 <rect key="frame" x="148" y="89" width="604" height="14"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="When enabled, the Chat tab can be used to send instant messages" id="2U1-hF-NCi">
-                                    <font key="font" metaFont="message" size="11"/>
+                                    <font key="font" metaFont="controlContent" size="11"/>
                                     <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
@@ -956,21 +956,54 @@
                     <view key="view" translatesAutoresizingMaskIntoConstraints="NO" id="m2S-Jp-Qdl">
                         <rect key="frame" x="0.0" y="0.0" width="1030" height="610"/>
                         <subviews>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QDz-gR-z1V">
-                                <rect key="frame" x="16" y="534" width="60" height="60"/>
+                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="01p-Pj-oUz" userLabel="TransportButtonView">
+                                <rect key="frame" x="12" y="524" width="174" height="52"/>
+                                <subviews>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="dsc-OH-awr" userLabel="ToStart">
+                                        <rect key="frame" x="21" y="7" width="64" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="cLs-bH-gd5"/>
+                                            <constraint firstAttribute="height" constant="32" id="y9B-Rf-QK5"/>
+                                            <constraint firstAttribute="width" constant="60" id="ygb-Kl-q8S"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="NSTouchBarSkipToStartTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="1zr-dh-DZj">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent">0</string>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="toStartPushed:" target="XfG-lQ-9wD" id="HJG-8T-FZk"/>
+                                        </connections>
+                                    </button>
+                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="QDz-gR-z1V" userLabel="PlayPause">
+                                        <rect key="frame" x="89" y="7" width="64" height="37"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="C90-Jh-xUo"/>
+                                            <constraint firstAttribute="width" constant="60" id="ITt-0q-zPj"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="M1q-Z2-O8y"/>
+                                        </constraints>
+                                        <buttonCell key="cell" type="bevel" bezelStyle="regularSquare" image="NSTouchBarPlayTemplate" imagePosition="overlaps" alignment="center" alternateImage="NSTouchBarPauseTemplate" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sMs-RT-4ne">
+                                            <behavior key="behavior" pushIn="YES" changeContents="YES" lightByContents="YES"/>
+                                            <font key="font" metaFont="system"/>
+                                            <string key="keyEquivalent" base64-UTF8="YES">
+IA
+</string>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="playPauseToggled:" target="XfG-lQ-9wD" id="WQ7-Ia-BPh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="mtg-mc-GZh"/>
-                                    <constraint firstAttribute="height" constant="60" id="zwt-Fc-4M0"/>
+                                    <constraint firstAttribute="trailing" secondItem="QDz-gR-z1V" secondAttribute="trailing" constant="23" id="3nd-4W-OQy"/>
+                                    <constraint firstItem="QDz-gR-z1V" firstAttribute="leading" secondItem="01p-Pj-oUz" secondAttribute="leading" constant="91" id="461-Bh-EJh"/>
+                                    <constraint firstItem="QDz-gR-z1V" firstAttribute="centerY" secondItem="01p-Pj-oUz" secondAttribute="centerY" id="7QF-FE-Xel"/>
+                                    <constraint firstItem="QDz-gR-z1V" firstAttribute="leading" secondItem="dsc-OH-awr" secondAttribute="trailing" constant="8" symbolic="YES" id="Aqj-Sh-xcZ"/>
+                                    <constraint firstItem="dsc-OH-awr" firstAttribute="baseline" secondItem="QDz-gR-z1V" secondAttribute="baseline" id="OuK-eY-JCU"/>
+                                    <constraint firstItem="dsc-OH-awr" firstAttribute="leading" secondItem="01p-Pj-oUz" secondAttribute="leading" constant="23" id="bh4-sS-6pV"/>
+                                    <constraint firstItem="QDz-gR-z1V" firstAttribute="top" secondItem="01p-Pj-oUz" secondAttribute="top" constant="10" id="iyy-u5-Nob"/>
                                 </constraints>
-                                <buttonCell key="cell" type="square" title="Play" bezelStyle="shadowlessSquare" image="NSTouchBarPlayTemplate" imagePosition="above" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="sMs-RT-4ne">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="playPressed:" target="XfG-lQ-9wD" id="Vgd-fS-9lf"/>
-                                    <binding destination="XfG-lQ-9wD" name="hidden" keyPath="self.player.playing" id="fQm-dC-r9J"/>
-                                </connections>
-                            </button>
+                            </customView>
                             <scrollView autohidesScrollers="YES" horizontalLineScroll="52" horizontalPageScroll="10" verticalLineScroll="52" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wbz-wd-VIH">
                                 <rect key="frame" x="12" y="12" width="744" height="504"/>
                                 <clipView key="contentView" drawsBackground="NO" id="bgx-z3-E04">
@@ -1203,25 +1236,6 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="drawBorder" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </customView>
-                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="hhh-DP-aH8">
-                                <rect key="frame" x="16" y="534" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="Cet-JO-oo2"/>
-                                    <constraint firstAttribute="width" constant="60" id="bfg-qz-Qaj"/>
-                                </constraints>
-                                <buttonCell key="cell" type="square" title="Stop" bezelStyle="shadowlessSquare" image="NSTouchBarRecordStopTemplate" imagePosition="above" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Krs-6O-NNC">
-                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="system"/>
-                                </buttonCell>
-                                <connections>
-                                    <action selector="stopPressed:" target="XfG-lQ-9wD" id="IDj-pJ-5qy"/>
-                                    <binding destination="XfG-lQ-9wD" name="hidden" keyPath="self.player.playing" id="RZh-oP-aJw">
-                                        <dictionary key="options">
-                                            <string key="NSValueTransformerName">NSNegateBoolean</string>
-                                        </dictionary>
-                                    </binding>
-                                </connections>
-                            </button>
                             <customView focusRingType="none" translatesAutoresizingMaskIntoConstraints="NO" id="i9y-Ua-GoW" userLabel="Lower Playhead" customClass="TimelineView" customModule="Trackomatic" customModuleProvider="target">
                                 <rect key="frame" x="287" y="12" width="469" height="504"/>
                                 <userDefinedRuntimeAttributes>
@@ -1234,8 +1248,8 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="drawBorder" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                             </customView>
-                            <tabView misplaced="YES" initialItem="1Hy-1p-4Gg" translatesAutoresizingMaskIntoConstraints="NO" id="aZ1-7L-X1O">
-                                <rect key="frame" x="761" y="31" width="264" height="565"/>
+                            <tabView initialItem="1Hy-1p-4Gg" translatesAutoresizingMaskIntoConstraints="NO" id="aZ1-7L-X1O">
+                                <rect key="frame" x="761" y="31" width="264" height="551"/>
                                 <constraints>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="250" id="1kk-G1-AJ6"/>
                                 </constraints>
@@ -1243,7 +1257,7 @@
                                 <tabViewItems>
                                     <tabViewItem label="Comments" identifier="comments" id="1Hy-1p-4Gg">
                                         <view key="view" id="9YP-LO-VjF">
-                                            <rect key="frame" x="10" y="33" width="244" height="519"/>
+                                            <rect key="frame" x="10" y="33" width="244" height="505"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                             <subviews>
                                                 <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="FSI-ze-SFJ">
@@ -1252,7 +1266,7 @@
                                                         <constraint firstAttribute="height" constant="24" id="CjS-DN-RCy"/>
                                                         <constraint firstAttribute="width" constant="24" id="FYa-dU-pm9"/>
                                                     </constraints>
-                                                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="overlaps" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mtQ-UW-D4G">
+                                                    <buttonCell key="cell" type="smallSquare" bezelStyle="smallSquare" image="NSAddTemplate" imagePosition="only" alignment="center" lineBreakMode="truncatingTail" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="mtQ-UW-D4G">
                                                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                         <font key="font" metaFont="system"/>
                                                     </buttonCell>
@@ -1402,7 +1416,7 @@
                                                 <textField verticalHuggingPriority="750" textCompletion="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ipm-Hv-Cyh">
                                                     <rect key="frame" x="15" y="439" width="227" height="12"/>
                                                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" allowsUndo="NO" sendsActionOnEndEditing="YES" alignment="left" usesSingleLineMode="YES" id="HME-8k-v9K">
-                                                        <font key="font" metaFont="system" size="9"/>
+                                                        <font key="font" metaFont="toolTip" size="9"/>
                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
@@ -1413,7 +1427,7 @@
                                                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="6g9-8a-eFE">
                                                     <rect key="frame" x="15" y="455" width="56" height="14"/>
                                                     <textFieldCell key="cell" lineBreakMode="clipping" title="Project ID" id="fsU-h7-yb5">
-                                                        <font key="font" metaFont="message" size="11"/>
+                                                        <font key="font" metaFont="controlContent" size="11"/>
                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
@@ -1421,6 +1435,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="mmZ-G8-a0X" firstAttribute="top" secondItem="017-Qv-66i" secondAttribute="top" constant="12" id="0X3-b5-gjR"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="6g9-8a-eFE" secondAttribute="trailing" symbolic="YES" id="7gZ-sj-Tzv"/>
                                                 <constraint firstItem="ipm-Hv-Cyh" firstAttribute="top" secondItem="6g9-8a-eFE" secondAttribute="bottom" constant="4" id="BVB-jY-q0i"/>
                                                 <constraint firstItem="ipm-Hv-Cyh" firstAttribute="top" secondItem="mmZ-G8-a0X" secondAttribute="bottom" constant="26" id="EFW-21-TvW"/>
                                                 <constraint firstItem="ipm-Hv-Cyh" firstAttribute="leading" secondItem="017-Qv-66i" secondAttribute="leading" constant="17" id="PoU-7o-vn5"/>
@@ -1503,23 +1518,22 @@
                             <constraint firstItem="wbz-wd-VIH" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="12" id="EEC-or-Y4F"/>
                             <constraint firstItem="wbz-wd-VIH" firstAttribute="top" secondItem="Uk2-F3-j5i" secondAttribute="bottom" constant="8" id="GHx-Wp-aoa"/>
                             <constraint firstItem="wbz-wd-VIH" firstAttribute="top" secondItem="gg8-nj-ySV" secondAttribute="bottom" constant="8" id="IMX-Ux-7tk"/>
+                            <constraint firstItem="01p-Pj-oUz" firstAttribute="top" secondItem="aZ1-7L-X1O" secondAttribute="top" id="IWg-db-PGa"/>
                             <constraint firstItem="i9y-Ua-GoW" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="287" id="N8G-5i-xrl"/>
                             <constraint firstItem="aEv-Ws-bZO" firstAttribute="width" secondItem="aZ1-7L-X1O" secondAttribute="width" id="NRF-SV-gqG"/>
+                            <constraint firstAttribute="trailing" secondItem="aEv-Ws-bZO" secondAttribute="trailing" constant="12" id="NpN-bu-yMn"/>
                             <constraint firstAttribute="bottom" secondItem="wbz-wd-VIH" secondAttribute="bottom" constant="12" id="QiO-ik-B0D"/>
-                            <constraint firstItem="hhh-DP-aH8" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="Qvy-SV-EMT"/>
                             <constraint firstAttribute="bottom" secondItem="i9y-Ua-GoW" secondAttribute="bottom" constant="12" id="Sgk-sT-DJP"/>
                             <constraint firstItem="i9y-Ua-GoW" firstAttribute="top" secondItem="sou-Vk-srP" secondAttribute="bottom" id="UJ1-9J-3o7"/>
                             <constraint firstItem="aEv-Ws-bZO" firstAttribute="top" secondItem="aZ1-7L-X1O" secondAttribute="bottom" constant="8" id="YVn-0z-mfE"/>
+                            <constraint firstItem="01p-Pj-oUz" firstAttribute="leading" secondItem="wbz-wd-VIH" secondAttribute="leading" id="dfL-dg-gEd"/>
                             <constraint firstItem="sou-Vk-srP" firstAttribute="leading" secondItem="Uk2-F3-j5i" secondAttribute="trailing" constant="8" id="gnf-gV-Ahm"/>
-                            <constraint firstItem="aEv-Ws-bZO" firstAttribute="leading" secondItem="aZ1-7L-X1O" secondAttribute="leading" id="iO1-7E-BgU"/>
+                            <constraint firstItem="aEv-Ws-bZO" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="aZ1-7L-X1O" secondAttribute="leading" id="iO1-7E-BgU"/>
                             <constraint firstItem="sou-Vk-srP" firstAttribute="leading" secondItem="gg8-nj-ySV" secondAttribute="trailing" constant="8" id="j6B-iY-PUo"/>
                             <constraint firstItem="aEv-Ws-bZO" firstAttribute="bottom" secondItem="i9y-Ua-GoW" secondAttribute="bottom" id="jJ4-AH-Cyv"/>
-                            <constraint firstItem="QDz-gR-z1V" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="16" id="lA1-ZV-fCJ"/>
                             <constraint firstItem="sou-Vk-srP" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="287" id="lEA-3O-EKx"/>
                             <constraint firstItem="wbz-wd-VIH" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="94" id="osE-fV-pJD"/>
-                            <constraint firstItem="QDz-gR-z1V" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="16" id="qXY-Dt-wr0"/>
                             <constraint firstAttribute="trailing" secondItem="aZ1-7L-X1O" secondAttribute="trailing" constant="12" id="uhn-Xn-7GG"/>
-                            <constraint firstItem="hhh-DP-aH8" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="16" id="uzm-W7-nVg"/>
                             <constraint firstItem="aZ1-7L-X1O" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="34" id="xP3-GL-gAh"/>
                         </constraints>
                     </view>
@@ -1638,7 +1652,7 @@ Gw
                                             <rect key="frame" x="6" y="40" width="33" height="14"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" title="Label" id="KMg-F8-adN">
                                                 <dateFormatter key="formatter" dateStyle="short" timeStyle="short" doesRelativeDateFormatting="YES" id="Xeh-oo-ryO"/>
-                                                <font key="font" metaFont="message" size="11"/>
+                                                <font key="font" metaFont="controlContent" size="11"/>
                                                 <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
@@ -1698,7 +1712,7 @@ Gw
                                                 <textField verticalHuggingPriority="750" horizontalCompressionResistancePriority="250" translatesAutoresizingMaskIntoConstraints="NO" id="IuI-7g-hki">
                                                     <rect key="frame" x="22" y="39" width="406" height="12"/>
                                                     <textFieldCell key="cell" selectable="YES" alignment="center" id="Eqi-Kq-Tyj">
-                                                        <font key="font" metaFont="system" size="9"/>
+                                                        <font key="font" metaFont="toolTip" size="9"/>
                                                         <color key="textColor" name="secondaryLabelColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                                     </textFieldCell>
@@ -1797,7 +1811,8 @@ Gw
         <image name="NSStatusAvailable" width="16" height="16"/>
         <image name="NSStatusPartiallyAvailable" width="16" height="16"/>
         <image name="NSTouchBarDeleteTemplate" width="15" height="30"/>
+        <image name="NSTouchBarPauseTemplate" width="11" height="30"/>
         <image name="NSTouchBarPlayTemplate" width="14" height="30"/>
-        <image name="NSTouchBarRecordStopTemplate" width="12" height="30"/>
+        <image name="NSTouchBarSkipToStartTemplate" width="12" height="30"/>
     </resources>
 </document>
